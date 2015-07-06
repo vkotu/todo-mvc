@@ -37,8 +37,14 @@ export default Ember.Component.extend({
       return model.get('length') > 0 && model.isEvery('isCompleted', true);
     } else {
       model.setEach('isCompleted', value);
+     // debugger;
       model.invoke('save');
       return value;
     }
-  }.property('model.@each.isCompleted')
+  }.property('model.@each.isCompleted'),
+  changeTodoStatus: function() {
+    console.log("Changed is completed");
+    //debugger;
+    this.get('model').save();
+  }.observes('model.@each.isCompleted')
 });

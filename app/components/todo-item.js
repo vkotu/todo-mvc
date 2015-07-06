@@ -13,4 +13,5 @@ export default Ember.Component.extend({
       this.sendAction('deleteTodo', todo);
     }
   }
+
 });
