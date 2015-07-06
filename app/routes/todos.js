@@ -3,6 +3,14 @@ import Ember from 'ember';
 export default Ember.Route.extend({
     model: function() {
         return this.store.find('todo');
+
+      //return this.store.filter('todo',function(t){
+      //  console.log("here");
+      //  var arr = [31,32,27];
+      //  //debugger;
+      //  return arr.indexOf(parseInt(t.id)) > -1 ? true : false;
+      //
+      //});
     },
     actions: {
         createTodo: function(newTitle) {
